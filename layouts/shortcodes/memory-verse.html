@@ -1,0 +1,29 @@
+{{ $dayNumOfYear := now.YearDay }}
+
+{{ $memoryVerseJSON := $.Site.Data.memoryverses }}
+{{ $thisMonthNumber := int (printf "%d" now.Month) }}
+<br>
+
+<!-- is today's date is 1 to 4 days from the last day of the current month? -->
+{{ if lt (now.AddDate 0 0 5).Day 5 }}
+    <!-- if yes, display all memory verses up to and including current month -->
+    <div class="memoryVerse">
+        <h3>This Year's Memory Verse Review</h3>
+        {{ range $memoryVerseJSON }}
+            {{ if gt (add $thisMonthNumber 1) (int .month) }}
+                <strong>{{ .reference }}</strong> - {{ .text }}<br><br>
+            {{ end }}
+        {{ end }}
+    </div>
+{{ else }}
+    <!-- if no, get the current month memory verse -->
+    {{ $monthMemoryVerse := index $memoryVerseJSON (int (printf "%d" (sub now.Month  1)))}}
+    <div class="memoryVerse">
+        <h3>Today's Memory Verse</h3>
+        {{ range $memoryVerseJSON }}
+            {{ if eq (int .month)  $thisMonthNumber }}
+                <strong>{{ .reference }}</strong> - {{ .text }}<br><br>
+            {{ end }}
+        {{ end }}
+    </div>
+{{ end }}
