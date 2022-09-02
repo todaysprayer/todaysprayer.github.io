@@ -4,7 +4,7 @@
 .hugo_build.lock
 resources/
 # Hugo default output directory
-public/
+# public/
 
 #
 ## node_modules
