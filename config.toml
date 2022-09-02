@@ -1,4 +1,4 @@
-baseURL = 'https://witty-grass-042828710.1.azurestaticapps.net/'
+baseURL = 'https:/todaysprayer.github.io/'
 languageCode = 'en-us'
 title = "Today's Prayer Site"
 theme = "hugo-theme-jane"
