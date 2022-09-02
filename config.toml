@@ -1,4 +1,4 @@
-baseURL = 'https:/todaysprayer.github.io/'
+baseURL = 'https:/todaysprayer.github.io/gh-pages'
 languageCode = 'en-us'
 title = "Today's Prayer Site"
 theme = "hugo-theme-jane"
