@@ -12,7 +12,7 @@
 <!-- check if there are no WSCs -->
 {{ if gt $dayNumOfYear $lastCycleNumber }}  
     <!-- lets get a random selection as we have gone 3 full cycles -->
-    {{ $.Scratch.Set "vovNum" int (index (seq $numberOfVov | shuffle) 0) }}
+    {{ $.Scratch.Set "vovNum" (int (index (seq $numberOfVov | shuffle) 0)) }}
 {{ else }}
     {{ if gt $dayNumOfYear $numberOfVov }} 
         <!-- then calculate which wsc Id -->
